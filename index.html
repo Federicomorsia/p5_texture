@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="it" data-effect="halftone">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <title>Wind flow · Halftone dots · Metaballs</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="vendor/p5.min.js"></script>
+    <script defer src="flow.js"></script>
+    <script defer src="wind-field.js"></script>
+    <script defer src="trail-renderer.js"></script>
+    <script defer src="halftone.js"></script>
+    <script defer src="metaballs.js"></script>
+    <script defer src="sketch.js"></script>
+  </head>
+  <body>
+    <main id="wind" aria-label="Scie di vento bianche su fondo nero"></main>
+    <aside class="controls" aria-label="Controlli animazione">
+      <section id="panel" class="panel" aria-labelledby="panel-title" hidden>
+        <header>
+          <div><h1 id="panel-title">Halftone dots</h1><p id="panel-description">Forme in movimento, punti fermi.</p></div>
+          <button id="close" class="icon-button" aria-label="Chiudi parametri" title="Chiudi (Esc)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg>
+          </button>
+        </header>
+        <div class="effect-picker">
+          <label for="effect">Effetto</label>
+          <select id="effect">
+            <option value="wind">Wind flow</option>
+            <option value="halftone" selected>Halftone dots</option>
+            <option value="metaballs">Metaballs</option>
+          </select>
+        </div>
+        <div id="sliders" class="sliders"></div>
+        <p id="effect-status" role="status" hidden></p>
+        <footer>
+          <button id="reset" class="text-button">Ripristina</button>
+          <button id="regenerate" class="text-button">Nuova forma</button>
+          <button id="pause" class="text-button" aria-pressed="false">Pausa</button>
+        </footer>
+      </section>
+      <button id="toggle" class="toggle" aria-expanded="false" aria-controls="panel" title="Mostra parametri (H)">
+        <span class="status-dot" aria-hidden="true"></span><span id="toggle-label">Halftone dots</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9m4 0h3M4 17h3m4 0h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>
+      </button>
+    </aside>
+    <noscript>Abilita JavaScript per visualizzare l’animazione.</noscript>
+  </body>
+</html>
